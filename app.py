@@ -2,40 +2,40 @@ import streamlit as st
 import pandas as pd
 import pandas as pd
 from datetime import datetime,timedelta
-import holidays
+#import holidays
 import pyodbc
 import base64
 import io
 
-br_holidays = holidays.BR()
-br_holidays = holidays.country_holidays('BR')
+# br_holidays = holidays.BR()
+# br_holidays = holidays.country_holidays('BR')
 
-dataInical = datetime.today()-timedelta(days=90)
-dataFinal = datetime.today()
+# dataInical = datetime.today()-timedelta(days=90)
+# dataFinal = datetime.today()
 
-#sabado = 5
-#domingo = 6
+# #sabado = 5
+# #domingo = 6
 
-if dataInical.weekday() == 5:
-    dataInical = dataInical-timedelta(days=1)
-    while dataInical in br_holidays:
-        dataInical = datetime.today()-timedelta(days=1)
+# if dataInical.weekday() == 5:
+#     dataInical = dataInical-timedelta(days=1)
+#     while dataInical in br_holidays:
+#         dataInical = datetime.today()-timedelta(days=1)
     
-if dataInical.weekday() == 6:
-    dataInical = dataInical-timedelta(days=2)
-    while dataInical in br_holidays:
-        dataInical = datetime.today()-timedelta(days=1)
+# if dataInical.weekday() == 6:
+#     dataInical = dataInical-timedelta(days=2)
+#     while dataInical in br_holidays:
+#         dataInical = datetime.today()-timedelta(days=1)
         
-while dataInical in br_holidays:
-    dataInical = dataInical-timedelta(days=1)
-    if dataInical.weekday() == 6:
-        dataInical = dataInical-timedelta(days=2)
-        while dataInical in br_holidays:
-            dataInical = datetime.today()-timedelta(days=1)
-    if dataInical.weekday() == 5:
-        dataInical = dataInical-timedelta(days=1)
-        while dataInical in br_holidays:
-            dataInical = datetime.today()-timedelta(days=1)
+# while dataInical in br_holidays:
+#     dataInical = dataInical-timedelta(days=1)
+#     if dataInical.weekday() == 6:
+#         dataInical = dataInical-timedelta(days=2)
+#         while dataInical in br_holidays:
+#             dataInical = datetime.today()-timedelta(days=1)
+#     if dataInical.weekday() == 5:
+#         dataInical = dataInical-timedelta(days=1)
+#         while dataInical in br_holidays:
+#             dataInical = datetime.today()-timedelta(days=1)
 
 dataInical = '2023-10-31'
 dataFinal = '2023-11-30'         
