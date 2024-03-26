@@ -1,0 +1,4 @@
+holidays==0.45
+pandas==1.5.3
+pyodbc==5.0.1
+streamlit==1.32.2
