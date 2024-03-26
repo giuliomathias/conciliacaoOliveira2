@@ -44,7 +44,7 @@ print(dataInical)
 print(dataFinal)
 
 conn = pyodbc.connect(
-            'Driver={SQL Server};'
+            'DRIVER={{ODBC Driver 18 for SQL Server}};'
             'Server=SP3LS05;'
             'Database=SQL_TEMA_FUNDOS;'
                     )
